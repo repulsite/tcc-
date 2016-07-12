@@ -1,12 +1,43 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="pt-br">
     <head>
-        <title>TODO supply a title</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> REPUL </title>
+        <meta name="viewport" content="width=device-widht, initial-scale=1.0">
+        <meta name="description" content="Repul">
+        <meta name="keywords" content="Repul, republicas, faculdade, moradia">
+        <meta name="author" content="Repul">
+        <link href="css/a_default.css" rel="stylesheet">
+        <link href="css/b_319.css" media="screen and (max-width:319px)" rel="stylesheet">
+        <link href="css/c_320_479.css" media="screen and (min-width:320px) and (max-width:479px)" rel="stylesheet" >
+        <link href="css/d_480_599.css" media="screen and (min-width:480px) and (max-width:599px)" rel="stylesheet">
+        <link href="css/e_600_767.css" media="screen and (min-width:600px) and (max-width:767px)" rel="stylesheet">
+        <link href="css/f_768_1023.css" media="screen and (min-width:768px) and (max-width:1023px)" rel="stylesheet">
+        <link href="css/g_1024_1199.css" media="screen and (min-width:1024px) and (max-width:1199px)" rel="stylesheet">
+        <link href="css/h_1200.css" media="screen and (min-width:1200px)" rel="stylesheet">
+        <script src="script/javascript.js"></script>
     </head>
     <body>
-        <div>Home Page do Site</div>
+        <div id="container">
+            <header id="cabecalho">
+                <nav>
+                     <?php
+                    require_once './view/menu.php';
+                    ?>
+                </nav>
+                    <img id="logo" src="imagem/repul.fw.png" alt="Logo do site"/>
+                    <hr id="linha">
+            </header>
+                <?php
+                if(isset($_GET['p'])){
+                    $p = $_GET ['p'];
+                    include_once './view/'.$p.'.php';
+                }else{
+                    include_once './view/home.php';
+                }
+                ?>
+            <footer>
+            </footer>
+        </div>
     </body>
 </html>
